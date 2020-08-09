@@ -13,18 +13,23 @@ const LINE_THROUGH ="lineThrough";
 const EDIT ="fa-pencil-square-o";
 
 
-var LIST,id;
+let LIST,id;
 
-function addToDo(toDo){
-   const item  =  `<p class="item">
+function addToDo(toDo,id,done,edit,trash){
+    if(edit){return;
+    }else if (trash){return; }
+
+    const DONE = done ? CHECK : UNCHECK;// if done is set to true,use the const CHECK value and if false,use UNCHECK value
+    const LINE = done ? LINE_THROUGH: "";//if done is true,put through line and if false ""
+    const item  =  `<p class="item">
                         <span class="fa fa-square-o complete" job="complete" id ="${id}"></span>
                         <i class="text ${LINE}">${toDo}</i> 
                         <span class = " fa fa-pencil-square-o" job="replace" id="${id}"></span>
                         <span class= "fa fa-trash-o delete" job="delete" id="${id}"></span>
                     </p>
                     `;
-    const position = "afterend";//item should be placed before the end of the element
-    list.insertAdjacentHTML(position,item);//add new items into the list and keep all nodes
+    const position = "beforeend";
+    list.insertAdjacentHTML(position,item);
 }
 
 document.addEventListener("keyup",function(event){//whenever user presses the key the function will be executed
