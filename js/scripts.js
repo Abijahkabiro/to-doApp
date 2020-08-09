@@ -24,7 +24,7 @@ function addToDo(toDo,id,done,edit,trash){
     const item  =  `<p class="item">
                         <span class="fa fa-square-o complete" job="complete" id ="${id}"></span>
                         <i class="text ${LINE}">${toDo}</i> 
-                        <span class = " fa fa-pencil-square-o" job="replace" id="${id}"></span>
+                        <span class = " fa fa-pencil-square-o replace" job="replace" id="${id}"></span>
                         <span class= "fa fa-trash-o delete" job="delete" id="${id}"></span>
                     </p>
                     `;
