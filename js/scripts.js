@@ -85,6 +85,15 @@ list.addEventListener("click",function(event){
 
 // save to do list to local storage
 let data = localStorage.getItem("TODO");
+//check whether the data is not empty then restore if not empty
+if (data){
+    LIST =JSON.parse(data);//data becomes an object
+    id = LIST.length;//set the id to the last one in the list  
+    loadList(LIST);//show the list of restored data 
+}else{
+   let LIST = [];
+   id = 0;
+}
 
 
 
