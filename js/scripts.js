@@ -94,7 +94,11 @@ if (data){
    let LIST = [];
    id = 0;
 }
-
+function loadList(array){//restores the todo
+    array.forEach(function(item){
+        addToDo(item.name,item.id,item.done,item.edit,item.trash);
+    });
+}
 
 
 
