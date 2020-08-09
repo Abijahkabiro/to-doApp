@@ -24,6 +24,18 @@ function addToDo(toDo){
     list.insertAdjacentHTML(position,item);//add new items into the list and keep all nodes
 }
 
+document.addEventListener("keyup",function(even){//whenever user presses the key the function will be executed
+    if(event.keyCode ==13){//key code for enter
+        const toDo = todo.value;
+
+        //if the todo is not empty the function addToDo is called
+        if(toDo){
+            addToDo(toDo);       
+        }
+        todo.value ="";//make input empty
+    }
+});
+
 
 
 
