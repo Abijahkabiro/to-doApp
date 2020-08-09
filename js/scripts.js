@@ -40,7 +40,7 @@ document.addEventListener("keyup",function(event){//whenever user presses the ke
         if(toDo){
             addToDo(toDo,id,false,false,false);  
             
-            LIST.push({
+            LIST.push({// it will push the new object to the list
                 name: toDo,
                 id:id,
                 done:false,//not yet complete
@@ -51,6 +51,14 @@ document.addEventListener("keyup",function(event){//whenever user presses the ke
         todo.value ="";//make todo empty
     }
 });
+//create  a function completeToDo
+function completeToDo(element){//runs when user clicks the buttons 
+    element.classlist.toggle(CHECK);//if check is in classlist  remove and add uncheck to the classlist
+    element.classlist.toggle(UNCHECK);//if uncheck is in classlist remove and add check
+    element.parentNode.querySelector(".text").classlist.toggle(LINE_THROUGH);
+    LIST[element.id].done = LIST[element.id].done ? false :true;
+}
+
 
 
 
