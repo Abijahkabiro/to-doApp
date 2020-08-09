@@ -70,6 +70,20 @@ function removeToDo(element){
     element.parentNode.parentNode.removeChild(element.parentNode);//removes the child from the node
     LIST[element.id].trash = true;
 }
+list.addEventListener("click",function(event){
+    const element = event.target;//return clicked element eg if you hit delete button it will remove the object from  the list
+    const elementJob = element.attributes.job.value;
+
+    if (elementJob == "complete"){
+        completeToDo(element);
+    }else if (elementJob == "replace"){
+        editToDo(element);
+    }else if(elementJob =="delete"){
+        removeToDo(element);
+    }
+});
+
+// save to do list to local storage
 
 
 
