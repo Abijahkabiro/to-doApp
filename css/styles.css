@@ -21,3 +21,34 @@
     padding: 0;
     margin: 0;
 }
+.item span.complete{
+    position: absolute;
+    font-size: 22px;
+    padding-left:7px;
+    left:18px;
+    top:10px;
+}
+.item span.delete{
+    position: absolute;
+    font-size: 22px;
+    padding-right:7px;
+    right:18px;
+    top:10px;
+}
+.item i.text{
+    font-size: 20px;
+    left:50px;
+    top:10px;
+    max-width:400px;
+    position: absolute;
+    padding:0;
+    margin-bottom:35px;
+    padding-left: 10px;
+}
+.item span.replace{
+    position: absolute;
+    font-size: 22px;
+    padding-right:7px;
+    right:40px;
+    top:10px;
+}
