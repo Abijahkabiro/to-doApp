@@ -47,17 +47,23 @@ document.addEventListener("keyup",function(event){//whenever user presses the ke
                 trash:false,  //item has not been removed   
                 edit:false,//item not editted
             });
+            //finding items to local storage
+            localStorage.setItem("TODO",JSON.stringify(LIST));//the list object is converted to string
+            id++;
         }
         todo.value ="";//make todo empty
     }
 });
+
+
 //create  a function completeToDo
-function completeToDo(element){//runs when user clicks the buttons 
-    element.classlist.toggle(CHECK);//if check is in classlist  remove and add uncheck to the classlist
-    element.classlist.toggle(UNCHECK);//if uncheck is in classlist remove and add check
-    element.parentNode.querySelector(".text").classlist.toggle(LINE_THROUGH);
-    LIST[element.id].done = LIST[element.id].done ? false :true;
+function completeToDo(element){//runs when user clicks the buttons
+    element.classList.toggle(CHECK); //if check is in classlist  remove and add uncheck to the classlist
+    element.classList.toggle(UNCHECK);  //if uncheck is in classlist remove and add check
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+    LIST[element.id].done = LIST[element.id].done ? false:true;
 }
+    
 // create a function replaceToDo
 /*
 function replaceToDo(element){
@@ -81,6 +87,8 @@ list.addEventListener("click",function(event){
     }else if(elementJob =="delete"){
         removeToDo(element);
     }
+    //add items to local stoorage
+    localStorage.setItem("TODO",JSON.stringify(LIST));//list object is converted to string
 });
 
 // save to do list to local storage
