@@ -17,7 +17,7 @@ let LIST,id;
 
 function addToDo(toDo,id,done,edit,trash){
     if(edit){return;
-    }else if (trash){return; }
+    }else if (trash){return; }//if false no return and if true,no code runs since the list is empty
 
     const DONE = done ? CHECK : UNCHECK;// if done is set to true,use the const CHECK value and if false,use UNCHECK value
     const LINE = done ? LINE_THROUGH: "";//if done is true,put through line and if false ""
@@ -28,19 +28,27 @@ function addToDo(toDo,id,done,edit,trash){
                         <span class= "fa fa-trash-o delete" job="delete" id="${id}"></span>
                     </p>
                     `;
-    const position = "beforeend";
-    list.insertAdjacentHTML(position,item);
+    const position = "beforeend";//tells postion of item in the element
+    list.insertAdjacentHTML(position,item);//to add new items to the list
 }
 
 document.addEventListener("keyup",function(event){//whenever user presses the key the function will be executed
     if(event.keyCode ==13){//key code for enter
         const toDo = todo.value;
 
-        //if the todo is not empty the function addToDo is called
+        //if the todo is not empty the function addToDo is called 
         if(toDo){
-            addToDo(toDo);       
+            addToDo(toDo,id,false,false,false);  
+            
+            LIST.push({
+                name: toDo,
+                id:id,
+                done:false,//not yet complete
+                trash:false,  //item has not been removed   
+                edit:false,//item not editted
+            });
         }
-        todo.value ="";//make input empty
+        todo.value ="";//make todo empty
     }
 });
 
