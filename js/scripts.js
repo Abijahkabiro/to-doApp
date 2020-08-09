@@ -12,6 +12,9 @@ const UNCHECK = "fa-square-o";
 const LINE_THROUGH ="lineThrough";
 const EDIT ="fa-pencil-square-o";
 
+
+var LIST,id;
+
 function addToDo(toDo){
    const item  =  `<p class="item">
                         <span class="fa fa-square-o complete" job="complete" id ="${id}"></span>
@@ -24,7 +27,7 @@ function addToDo(toDo){
     list.insertAdjacentHTML(position,item);//add new items into the list and keep all nodes
 }
 
-document.addEventListener("keyup",function(even){//whenever user presses the key the function will be executed
+document.addEventListener("keyup",function(event){//whenever user presses the key the function will be executed
     if(event.keyCode ==13){//key code for enter
         const toDo = todo.value;
 
