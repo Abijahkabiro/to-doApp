@@ -58,6 +58,18 @@ function completeToDo(element){//runs when user clicks the buttons
     element.parentNode.querySelector(".text").classlist.toggle(LINE_THROUGH);
     LIST[element.id].done = LIST[element.id].done ? false :true;
 }
+// create a function replaceToDo
+/*
+function replaceToDo(element){
+    element.parentNode.querySelector(".text").classList.toggle(EDIT);
+    LIST[element.id].edit = true; 
+}*/
+
+//create a function removeToDo
+function removeToDo(element){
+    element.parentNode.parentNode.removeChild(element.parentNode);//removes the child from the node
+    LIST[element.id].trash = true;
+}
 
 
 
