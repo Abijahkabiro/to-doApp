@@ -1,5 +1,13 @@
 .card{
+    margin-left:30%;
+    margin-top: 10%;
     width: 450px;
-    height:  600px;
     background-color: beige;
+}
+.add-to-do{
+    margin-bottom: 5px;
+}
+.lineThrough{
+    color : rgb(209, 16, 16);
+    text-decoration: line-through;
 }
