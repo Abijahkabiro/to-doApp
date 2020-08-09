@@ -84,7 +84,7 @@ list.addEventListener("click",function(event){
 });
 
 // save to do list to local storage
-
+let data = localStorage.getItem("TODO");
 
 
 
